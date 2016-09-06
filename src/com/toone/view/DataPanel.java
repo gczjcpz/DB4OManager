@@ -157,7 +157,7 @@ public class DataPanel extends VBox {
 			}
 			this.totalPredicate = new PredicateBinding(predicates);
 			this.totalPredicate.addListener((value, o, n) -> filterTableDatas(allDatas, n));
-			this.refresh();
+//			this.refresh();
 			this.scrollToColumnIndex(0);
 		}
 
@@ -168,7 +168,7 @@ public class DataPanel extends VBox {
 				list.add(new RowNumber(i + 1, allDatas.get(i)));
 			}
 			this.setItems(list);
-			this.refresh();
+//			this.refresh();
 		}
 
 		private class PrimitiveTypeTableCell extends TableCell<Object, Object> {
