@@ -25,20 +25,25 @@ import javafx.stage.Stage;
  */
 public class MainFrame extends Application {
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+//    public static void main(String[] args) {
+//        launch(args);
+//    }
+	private String DBURL;
 
     private Stage primaryStage;
 
     private Ctrl ctrl;
 
+    public MainFrame(String DBURL){
+    	this.DBURL = DBURL;
+    }
+    
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
         primaryStage.setTitle("DB4O数据库管理器");
 
-        ctrl = new Ctrl();
+        ctrl = new Ctrl(DBURL);
         SplitPane dbExplorer = buildDBExplorer();
         VBox root = new VBox(buildCodeTextArea(), dbExplorer);
         VBox.setVgrow(dbExplorer, Priority.ALWAYS);
