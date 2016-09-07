@@ -1,0 +1,25 @@
+C:\Users\housh\Desktop\G106东明黄河大桥引道中修工程\6fdb0f3e_5709_471a_8382_3e6accfc44df.ecd
+C:\Users\housh\Desktop\G106东明黄河大桥引道中修工程\6fdb0f3e_5709_471a_8382_3e6accfc44df.ecd
+aaaa
+import java.io.FileWriter; 
+import java.io.IOException; 
+import java.io.RandomAccessFile; 
+/** * 将内容追加到文件尾部 */ 
+public class AppendToFile { 
+/** * A方法追加文件：使用RandomAccessFile * @param fileName 文件名 * @param content 追加的内容 */ 
+public static void appendMethodA(String fileName, String content){ 
+try { 
+// 打开一个随机访问文件流，按读写方式 
+RandomAccessFile randomFile = new RandomAccessFile(fileName, "rw"); 
+// 文件长度，字节数 
+long fileLength = randomFile.length(); //将写文件指针移到文件尾。 
+randomFile.seek(fileLength); 
+randomFile.writeBytes(content); 
+randomFile.close(); 
+} catch (IOException e)
+{ e.printStackTrace(); 
+} 
+} 
+C:\Users\housh\Desktop\da8aa896_3631_4c8a_9c4b_074b4dc22647.ecd
+C:\Users\housh\Desktop\da8aa896_3631_4c8a_9c4b_074b4dc22647.ecd
+C:\Users\housh\Desktop\da8aa896_3631_4c8a_9c4b_074b4dc22647.ecd
