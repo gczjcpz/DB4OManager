@@ -101,24 +101,7 @@ public class DataPanel extends VBox {
 		/**
 		 * 筛选条件
 		 */
-		private ObjectBinding<Predicate<Object>> totalPredicate = new ObjectBinding<Predicate<Object>>() {
-			@Override
-			protected Predicate<Object> computeValue() {
-				ObservableList<Predicate<Object>> dependencies = (ObservableList<Predicate<Object>>) getDependencies();
-				if (dependencies == null || dependencies.isEmpty()) {
-					return e -> true;
-				} else {
-					return e -> {
-						for (Predicate<Object> item : dependencies) {
-							boolean test = item.test(e);
-							if (!test)
-								return false;
-						}
-						return true;
-					};
-				}
-			}
-		};
+		private ObjectBinding<Predicate<Object>> totalPredicate = null;
 
 		public void refreshTableDatas(ReflectClass clazz, List<Object> allDatas) {
 			this.allDatas = allDatas;

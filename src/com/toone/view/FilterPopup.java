@@ -23,12 +23,12 @@ public class FilterPopup extends Popup {
 		popupRootPane.setStyle("-fx-background-color: #ffffff;-fx-border-color:#039ed3");
 		Label label = new Label("i am popup");
 		Button confirm = new Button("确定");
-		confirm.setOnAction(e -> {
-			predicate.setValue(item -> {
-				Object fieldValue = field.get(item);
-				return true;
-			});
-		});
+//		confirm.setOnAction(e -> {
+//			predicate.setValue(item -> {
+//				Object fieldValue = field.get(item);
+//				return true;
+//			});
+//		});
 		popupRootPane.getChildren().addAll(label, confirm);
 		this.getContent().add(popupRootPane);
 		this.show(popupNode, x, y);
