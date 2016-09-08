@@ -61,7 +61,9 @@ public class OpenFrame extends Application{
 		
 		ListView<String> listView = new ListView<>();
 		listView.setPrefSize(250, 80);
-		ObservableList<String> items = FXCollections.observableArrayList("C:\\Users\\housh\\Desktop\\da8aa896_3631_4c8a_9c4b_074b4dc22647.ecd","B","C","Djknjkhkhkh");
+		ObservableList<String> items = FXCollections.observableArrayList();
+		items.addAll(new readWriteConfig().readCofig());
+//		ObservableList<String> items = FXCollections.observableArrayList("C:\\Users\\housh\\Desktop\\da8aa896_3631_4c8a_9c4b_074b4dc22647.ecd","B","C","Djknjkhkhkh");
 		listView.setItems(items);
 		
 		Label scenetitle = new Label("New Connection");
@@ -131,6 +133,7 @@ public class OpenFrame extends Application{
 		border_child.setCenter(hbox_center);
 		border_child.setTop(hbox_listView);
 		Scene scene = new Scene(border, 460, 300);
+//		scene.getStylesheets().add(e);
 		primaryStage.setTitle("ObjectManager");
 		primaryStage.setScene(scene);
 		primaryStage.setResizable(false);
